@@ -23,7 +23,7 @@ window.onload = function() {
                 debug: false // デバックモード
             }
         },
-        scene: [MyScene], // デフォルトシーン
+        scene: [MainScene], // デフォルトシーン
     };
     // ゲーム開始
     game = new Phaser.Game(config);
