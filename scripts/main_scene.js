@@ -38,7 +38,7 @@ class MainScene extends Phaser.Scene {
             let randb =  Phaser.Math.Between(25, 425) ;  // y は　50～200の間の値
             staticGroup.create(randa, randb , 'apple');
         }
-        //this.physics.add.overlap(taro, staticGroup, collectfruit, null, this);
+        this.physics.add.overlap(taro, staticGroup, collectfruit, null, this);
         this.physics.add.overlap(hanako, staticGroup, collectfruit, null, this);
         function collectfruit(hanako,fruit){
             this.count+=1;
@@ -52,23 +52,23 @@ class MainScene extends Phaser.Scene {
         let cursors = this.input.keyboard.createCursorKeys();
         if(cursors.up.isDown){
             console.log("Up!!");
-            //this.taro.setVelocityY(-40);// 上方向の速度を設定
+            this.taro.setVelocityY(-40);// 上方向の速度を設定
             this.hanako.setVelocityY(40);
         } else if(cursors.down.isDown){
             console.log("down!!");
-            //this.taro.setVelocityY(40);// 下方向の速度を設定
+            this.taro.setVelocityY(40);// 下方向の速度を設定
             this.hanako.setVelocityY(-40);
         }else if(cursors.left.isDown){
             console.log("Left");
-            //this.taro.setVelocityX(-40);// 左方向の速度を設定
+            this.taro.setVelocityX(-40);// 左方向の速度を設定
             this.hanako.setVelocityX(40);
         }else if(cursors.right.isDown){
             console.log("Right!!");
-            //this.taro.setVelocityX(40);// 右方向の速度を設定
+            this.taro.setVelocityX(40);// 右方向の速度を設定
             this.hanako.setVelocityX(-40);
         }else{
-            //this.taro.setVelocityX(0);// 横方向の速度を0
-            //this.taro.setVelocityY(0);// 縦方向の速度を0
+            this.taro.setVelocityX(0);// 横方向の速度を0
+            this.taro.setVelocityY(0);// 縦方向の速度を0
             this.hanako.setVelocityX(0);
             this.hanako.setVelocityY(0);
         }
